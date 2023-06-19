@@ -5,9 +5,9 @@
   background-color: $primary-color-light;
   padding: 15px;
   border-radius: 20px;
-  max-width: 80%;
+  max-width: 90%;
   font-family: $font-family-primary;
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: clamp(1rem, 2.5vw, 1rem);
 
   &.left {
     border-top-left-radius: 0px;
@@ -16,6 +16,7 @@
   }
 
   &.right {
+    background-color: rgba($primary-color, 20%);
     border-top-left-radius: 20px;
     border-top-right-radius: 0px;
     margin-left: auto;

@@ -1,9 +1,9 @@
 import React from "react";
 import ChatCard from "./chatCard/ChatCard";
 import styles from "./ChatList.module.scss";
+import Loader from "../ui/loader/Loader";
 
-function ChatList({ messages }) {
-  console.log(messages);
+function ChatList({ messages, loading }) {
   return (
     <div className={styles.wrapper}>
       {messages.map((message) => {
@@ -18,6 +18,14 @@ function ChatList({ messages }) {
           <></>
         );
       })}
+
+      {loading ? (
+        <ChatCard className={"right"}>
+          <Loader loading={true} />
+        </ChatCard>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

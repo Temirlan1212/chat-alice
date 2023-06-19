@@ -5,65 +5,20 @@
   padding-bottom: 10px;
 }
 
-// .categoriesWrapper {
-//   margin: 20px 0 0;
+.speechRecognation {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 20px;
 
-//   @include media-breakpoint-down(xl) {
-//     padding: 0 1rem;
-//   }
-// }
-
-// .newCouponsTitle {
-//   @include media-breakpoint-down(md) {
-//     text-align: center;
-//   }
-// }
-
-// .homeShowMoreButton {
-//   max-width: 152px;
-//   text-align: center;
-//   padding: 11px 0;
-//   margin: 0 auto;
-// }
-
-// .sliderWrapper {
-//   margin-bottom: 64px;
-// }
-
-// .gallery {
-//   display: flex;
-//   justify-content: space-between;
-
-//   @include media-breakpoint-down(sm) {
-//     flex-direction: column;
-//     gap: 20px;
-//   }
-// }
-
-// .galleryImage {
-//   transition: scale 0.2s;
-//   cursor: pointer;
-//   height: auto;
-//   object-fit: cover;
-//   width: 340px;
-
-//   @include media-breakpoint-down(xl) {
-//     width: 300px;
-//   }
-
-//   @include media-breakpoint-down(lg) {
-//     width: 220px;
-//   }
-
-//   @include media-breakpoint-down(md) {
-//     width: 160px;
-//   }
-
-//   @include media-breakpoint-down(sm) {
-//     width: 100%;
-//   }
-
-//   &:hover {
-//     scale: 1.1;
-//   }
-// }
+  .text-wrapper {
+    background-color: rgba($primary-color, 70%);
+    padding: 10px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    font-family: $font-family-primary;
+    color: white;
+  }
+}
