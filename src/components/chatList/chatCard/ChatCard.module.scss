@@ -1,0 +1,23 @@
+@use "../../../assets/styles/utils/" as *;
+
+.wrapper {
+  display: inline-grid;
+  background-color: $primary-color-light;
+  padding: 15px;
+  border-radius: 20px;
+  max-width: 80%;
+  font-family: $font-family-primary;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+
+  &.left {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    margin-right: auto;
+  }
+
+  &.right {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    margin-left: auto;
+  }
+}
