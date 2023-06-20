@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 
-function TypingEffect({ text, delay = 10 }) {
+function TypingEffect({ text, duration = 10 }) {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -8,7 +8,7 @@ function TypingEffect({ text, delay = 10 }) {
     const typingTimer = setTimeout(() => {
       setCurrentText(text.slice(0, currentIndex + 1));
       setCurrentIndex(currentIndex + 1);
-    }, delay);
+    }, duration);
 
     return () => clearTimeout(typingTimer);
   }, [currentIndex, text]);
