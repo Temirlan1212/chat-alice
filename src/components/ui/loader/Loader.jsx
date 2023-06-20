@@ -4,10 +4,10 @@ function Loader(loading) {
   return (
     <>
       {loading ? (
-        <section class={styles["dots-container"]}>
-          <div class={styles.dot}></div>
-          <div class={styles.dot}></div>
-          <div class={styles.dot}></div>
+        <section className={styles["dots-container"]}>
+          <div className={styles.dot}></div>
+          <div className={styles.dot}></div>
+          <div className={styles.dot}></div>
         </section>
       ) : (
         ""

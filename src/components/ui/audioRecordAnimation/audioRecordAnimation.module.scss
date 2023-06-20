@@ -4,8 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
   background-color: $primary-color;
   border-radius: 50%;
   cursor: pointer;
@@ -36,8 +34,6 @@
 }
 
 .audio-record-circle {
-  width: 60px;
-  height: 60px;
   background-color: #fff;
   border-radius: 50%;
 }

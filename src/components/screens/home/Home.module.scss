@@ -8,21 +8,3 @@
   overflow: auto;
   scroll-behavior: smooth;
 }
-
-.speechRecognation {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  gap: 20px;
-
-  .text-wrapper {
-    background-color: rgba($primary-color, 70%);
-    padding: 10px;
-    border-radius: 20px;
-    border-top-left-radius: 0px;
-    font-family: $font-family-primary;
-    color: white;
-  }
-}

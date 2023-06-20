@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ChatCard.module.scss";
 import cn from "classnames";
 
