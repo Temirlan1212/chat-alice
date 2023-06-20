@@ -10,8 +10,12 @@ import InactivityTracker from "../../ui/inactivityTracker/InactivityTracker";
 
 const { getAssistantResponse } = chatApi;
 
+const initChatList = [
+  { message: "Привет, чем могу помочь?", type: "assistant" },
+];
+
 function Home() {
-  const [chatList, setChatList] = useState([]);
+  const [chatList, setChatList] = useState(initChatList);
   const [loading, setLoading] = useState(false);
   const containerRef = useRef(null);
 

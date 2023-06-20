@@ -1,7 +1,5 @@
+@use "./assets/styles/utils/" as *;
+
 .wrapper {
-  background: linear-gradient(
-    212deg,
-    rgba(223, 238, 236, 1) 0%,
-    rgba(253, 242, 227, 1) 100%
-  );
+  background: $primary-bg-linear;
 }
