@@ -3,6 +3,10 @@
 .wrapper {
   padding-top: 10px;
   padding-bottom: 10px;
+  height: 100vh;
+  padding-bottom: 150px;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .speechRecognation {

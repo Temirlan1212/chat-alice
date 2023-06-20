@@ -11,6 +11,7 @@
     "react-dom": "^18.2.0",
     "react-id-generator": "^3.0.2",
     "react-scripts": "5.0.1",
+    "react-speech-kit": "^3.0.1",
     "react-speech-recognition": "^3.10.0",
     "sass": "^1.63.4",
     "scss": "^0.2.4",

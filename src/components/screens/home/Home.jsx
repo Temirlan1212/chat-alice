@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.scss";
 import ChatList from "../../chatList/ChatList";
 import cn from "classnames";
@@ -15,17 +15,18 @@ function Home() {
     browserSupportsSpeechRecognition,
     resetTranscript,
   } = useSpeechRecognition();
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (transcript) {
-      updateList(transcript, false);
+      updateList(transcript, "user");
       uploadAudioText(transcript);
       resetTranscript();
     }
   }, [listening]);
 
-  const updateList = (data, isAssistance) => {
-    const newItem = { isAssistance, message: data, id: nextId() };
+  const updateList = (data, type) => {
+    const newItem = { type, message: data, id: nextId() };
     setMessages((prevMessages) => [...prevMessages, newItem]);
   };
 
@@ -39,17 +40,21 @@ function Home() {
         body: formData,
       });
       const { response } = await data.json();
-      updateList(response, true);
+      updateList(response, "assistant");
     } catch (error) {
-      console.error("Ошибка:", error);
+      updateList("Ошибка, можете повторить", "error");
     } finally {
       setLoading(false);
+
+      if (containerRef != null) {
+        containerRef.current.scrollTop = containerRef.current.scrollHeight;
+      }
     }
   }
 
   return (
-    <>
-      <div className={cn(styles.wrapper, "container")}>
+    <div className={styles.wrapper} ref={containerRef}>
+      <div className={"container"}>
         <ChatList messages={messages} loading={loading} />
       </div>
       <div className={cn(styles.speechRecognation, "container")}>
@@ -69,7 +74,7 @@ function Home() {
           ""
         )}
       </div>
-    </>
+    </div>
   );
 }
 

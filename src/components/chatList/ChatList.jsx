@@ -2,17 +2,15 @@ import React from "react";
 import ChatCard from "./chatCard/ChatCard";
 import styles from "./ChatList.module.scss";
 import Loader from "../ui/loader/Loader";
+import TypingEffect from "../ui/typingEffect/TypingEffect";
 
-function ChatList({ messages, loading }) {
+const ChatList = ({ messages, loading, ...rest }) => {
   return (
-    <div className={styles.wrapper}>
+    <div {...rest} className={styles.wrapper}>
       {messages.map((message) => {
         return message?.message ? (
-          <ChatCard
-            key={message.id}
-            className={message?.isAssistance ? "right" : "left"}
-          >
-            {message.message}
+          <ChatCard key={message.id} className={message?.type ?? ""}>
+            <TypingEffect text={message.message} />
           </ChatCard>
         ) : (
           <></>
@@ -20,7 +18,7 @@ function ChatList({ messages, loading }) {
       })}
 
       {loading ? (
-        <ChatCard className={"right"}>
+        <ChatCard className={"assistant"}>
           <Loader loading={true} />
         </ChatCard>
       ) : (
@@ -28,6 +26,6 @@ function ChatList({ messages, loading }) {
       )}
     </div>
   );
-}
+};
 
 export default ChatList;
