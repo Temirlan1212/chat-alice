@@ -43,7 +43,9 @@ function SpeechRecognation({
     handlePlay(StopAssistant);
   };
 
-  useOutsideClick(ref, handleRecordStop);
+  useOutsideClick(ref, () => {
+    if (listening) handleRecordStop();
+  });
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Your browser doesn't support Speech o Text</span>;
